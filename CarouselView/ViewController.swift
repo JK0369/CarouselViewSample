@@ -13,8 +13,8 @@ class ViewController: UIViewController {
 
     lazy var collectionView: UICollectionView = {
         let flowLayout = UICollectionViewFlowLayout()
-        flowLayout.scrollDirection = .horizontal // point
-        flowLayout.minimumLineSpacing = 50
+        flowLayout.scrollDirection = .horizontal
+        flowLayout.minimumLineSpacing = 50 // cell사이의 간격 설정
         let view = UICollectionView(frame: .zero, collectionViewLayout: flowLayout)
         view.backgroundColor = .brown
 
@@ -80,7 +80,7 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: view.frame.width - 80, height: view.frame.height) // point
+        return CGSize(width: 320, height: collectionView.frame.height) // point
     }
 }
 
